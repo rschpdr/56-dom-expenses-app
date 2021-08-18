@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Importação do Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Controle de gastos</h1>
+
+      <div class="row">
+        <!-- Coluna do formulário -->
+        <div class="col-12 col-lg-5">
+          <div class="row">
+            <div class="mb-3 col-8">
+              <label for="formDescription" class="form-label">Descrição</label>
+              <input id="formDescription" class="form-control" />
+            </div>
+
+            <div class="mb-3 col-4">
+              <label for="formValue" class="form-label">Valor</label>
+              <input id="formValue" class="form-control" type="number" />
+            </div>
+          </div>
+
+          <legend>Tipo de transação</legend>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="formTransactionType"
+              id="formTransactionTypeCredit"
+              value="credit"
+            />
+            <label class="form-check-label" for="formTransactionTypeCredit"
+              >Crédito</label
+            >
+          </div>
+          <div class="form-check form-check-inline mb-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="formTransactionType"
+              id="formTransactionTypeDebit"
+              value="debit"
+            />
+            <label class="form-check-label" for="formTransactionTypeDebit"
+              >Débito</label
+            >
+          </div>
+
+          <div class="text-end">
+            <button id="submitBtn" class="btn btn-primary">Salvar</button>
+          </div>
+
+          <h2>Saldo: R$ <span id="balance">0.00</span></h2>
+        </div>
+
+        <!-- Coluna da lista de transações -->
+        <div class="col-12 col-lg-7">
+          <ul id="transactionList" class="list-group"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/scripts/index.js"></script>
+  </body>
+</html>
